@@ -1,2 +1,17 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h1>GAME</h1>
+
+<% 3.times do |row| %>
+
+  <div class="row">
+    <% 3.times do |col| %>
+      <span class="cell">
+        <% if !@game[row , col].nil? %>
+          <%= game[row, col] %>
+        <% else %>
+          <a href="#"><% game.current_symbol %></a>
+        <%end%>
+      </span>
+    <% end %>
+  </div>
+
+<% end %>
