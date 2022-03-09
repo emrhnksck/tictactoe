@@ -1,17 +1,6 @@
-<h1>GAME</h1>
 
-<% 3.times do |row| %>
+<%= turbo_stream_from @game %>
 
-  <div class="row">
-    <% 3.times do |col| %>
-      <span class="cell">
-        <% if !@game[row , col].nil? %>
-          <%= game[row, col] %>
-        <% else %>
-          <a href="#"><% game.current_symbol %></a>
-        <%end%>
-      </span>
-    <% end %>
-  </div>
-
-<% end %>
+<div id="<%= dom_id(@game)%>">
+  <%= render @game %>
+</div>
